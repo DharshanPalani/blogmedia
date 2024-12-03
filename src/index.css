@@ -1,0 +1,64 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-pink-100;
+  }
+  
+  :root {
+    --primary: #ec4899;
+    --primary-light: #f9a8d4;
+    --accent: #fdf2f8;
+    --accent-light: #fce7f3;
+    --glass: rgba(255, 255, 255, 0.5);
+  }
+}
+
+@layer utilities {
+  .hover-scale-102 {
+    @apply hover:scale-[1.02];
+  }
+  
+  .glass-effect {
+    @apply backdrop-blur-md bg-white/30 border border-white/20 shadow-sm;
+  }
+  
+  .neon-shadow {
+    box-shadow: 0 0 15px rgba(236, 72, 153, 0.2);
+  }
+  
+  .hover-neon {
+    @apply transition-all duration-300 hover:neon-shadow;
+  }
+
+  .mobile-sidebar {
+    @apply fixed inset-0 z-50 transform transition-transform duration-300 ease-in-out lg:relative lg:translate-x-0;
+  }
+}
+
+.glassmorphism {
+  background: rgba(255, 255, 255, 0.4);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+@keyframes float {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+  100% { transform: translateY(0px); }
+}
+
+.animate-glow {
+  animation: glow 2s ease-in-out infinite alternate;
+}
+
+@keyframes glow {
+  from { box-shadow: 0 0 5px #ec4899, 0 0 10px #ec4899, 0 0 15px #f9a8d4; }
+  to { box-shadow: 0 0 10px #ec4899, 0 0 20px #ec4899, 0 0 30px #f9a8d4; }
+}
